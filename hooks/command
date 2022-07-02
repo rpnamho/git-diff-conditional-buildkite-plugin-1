@@ -39,12 +39,9 @@ if [[ -z "$diff" ]]; then
   echo "No diff detected"
   exit 0
 else
-  echo "HERE"
-  mkdir -p .git_diff_conditional
-  ls -alh
-  echo "$diff" > .git_diff_conditional/git_diff
-  ls .git_diff_conditional/git_diff
-  cat .git_diff_conditional/git_diff
+  mkdir -p git_diff_conditional
+  echo "$diff" > git_diff_conditional/git_diff
+  cat git_diff_conditional/git_diff
 fi
 
 docker build "$basedir" -t buildkite-pyyaml > /dev/null

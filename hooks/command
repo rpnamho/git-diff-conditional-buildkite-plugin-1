@@ -2,7 +2,6 @@
 set -euo pipefail
 
 set +u
-echo "WTF"
 # Check if the plugin is disabled
 if [[ -n "$BUILDKITE_PLUGIN_GIT_DIFF_CONDITIONAL_DISABLE_PLUGIN" ]]; then
   echo "Plugin disable flag detected, passing entire pipeline to buildkite"
@@ -40,6 +39,7 @@ if [[ -z "$diff" ]]; then
   echo "No diff detected"
   exit 0
 else
+  echo "HERE"
   mkdir -p .git_diff_conditional
   ls -alh
   echo "$diff" > .git_diff_conditional/git_diff

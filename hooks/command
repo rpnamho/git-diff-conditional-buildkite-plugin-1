@@ -2,6 +2,7 @@
 set -euo pipefail
 
 set +u
+echo "WTF"
 # Check if the plugin is disabled
 if [[ -n "$BUILDKITE_PLUGIN_GIT_DIFF_CONDITIONAL_DISABLE_PLUGIN" ]]; then
   echo "Plugin disable flag detected, passing entire pipeline to buildkite"

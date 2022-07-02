@@ -41,6 +41,7 @@ if [[ -z "$diff" ]]; then
 else
   mkdir -p .git_diff_conditional
   echo "$diff" > .git_diff_conditional/git_diff
+  cat .git_diff_conditional/git_diff
 fi
 
 docker build "$basedir" -t buildkite-pyyaml > /dev/null

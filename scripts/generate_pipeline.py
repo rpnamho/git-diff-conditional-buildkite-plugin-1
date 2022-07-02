@@ -148,7 +148,7 @@ class GitDiffConditional:
 
 def get_diff():
     try:
-        with open(".git_diff_conditional/git_diff", "r") as _fp:
+        with open("git_diff_conditional/git_diff", "r") as _fp:
             diff = [_file.strip() for _file in _fp.readlines() if _file.strip() != ""]
     except FileNotFoundError:
         log_and_exit("error", "Error getting diff from file", 1)
@@ -186,7 +186,7 @@ def handler():
         LOG.info("Dynamic pipeline generated, saving for agent upload")
 
         try:
-            with open(".git_diff_conditional/pipeline_output", "w") as _fp:
+            with open("git_diff_conditional/pipeline_output", "w") as _fp:
                 yaml.dump(pipeline, _fp, default_flow_style=False)
         except Exception:
             log_and_exit("error", "error saving pipeline to disk", 1)

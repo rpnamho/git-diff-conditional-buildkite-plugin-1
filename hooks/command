@@ -41,7 +41,9 @@ if [[ -z "$diff" ]]; then
   exit 0
 else
   mkdir -p .git_diff_conditional
+  ls -alh
   echo "$diff" > .git_diff_conditional/git_diff
+  ls .git_diff_conditional/git_diff
   cat .git_diff_conditional/git_diff
 fi
 
